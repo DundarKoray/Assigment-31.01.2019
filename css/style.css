@@ -229,7 +229,7 @@ h2 {
 
 .theback__table {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 auto;
   font-size: 25px;
 }
