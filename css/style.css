@@ -234,10 +234,14 @@ h2 {
   font-size: 25px;
 }
 
-.table-box {
+.theback {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+td {
+  text-align: start;
 }
 
 /* TESTIMONIALS */
@@ -319,6 +323,7 @@ cite {
 
 .contact__questions {
   display: flex;
+  padding: 5px;
   margin-bottom: 20px;
 }
 
