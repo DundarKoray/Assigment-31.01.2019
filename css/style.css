@@ -8,10 +8,7 @@ body {
   color: #40514e;
   text-align: center;
   font-family: "Montserrat", serif;
-}
-
-p {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .myhr {
@@ -140,7 +137,7 @@ li {
   text-decoration: none;
   padding: 5px 15px;
   color: #fff;
-  font-size: 170%;
+  font-size: 140%;
 }
 
 .main-nav li:not(:last-child) {
@@ -202,7 +199,7 @@ h2 {
 }
 
 .hero-action p {
-  font-size: 18px;
+  font-size: 110%;
   line-height: 1.5;
 }
 
