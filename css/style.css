@@ -228,6 +228,8 @@ h2 {
 }
 
 .theback__table {
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   font-size: 25px;
 }
