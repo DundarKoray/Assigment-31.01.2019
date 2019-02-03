@@ -18,8 +18,8 @@
 
 /* Small tablet to big tablet: from 768px (IPAD) to 1023px (landscape tablet) */
 @media only screen and (max-width: 1023px) {
-  .main-nav__button {
-    font-size: 100%;
+  .main-nav, , .sub-nav{
+    font-size: 80%;
   }
 
   h1 {
@@ -29,13 +29,44 @@
   .row{
       padding: 0 5px;
   }
-}
 
+  .theback__table {
+    margin-top: 55px;
+    font-size: 12px;
+  }
+  .maincontainer {
+    width: 220px;
+    height: 420px;
+    
+  }
+
+  .main-nav li:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  .sub-nav li:not(:last-child) {
+  margin-right: 5px;
+  }
+}
 /* Small phones to small tablets:481px to 767px*/
 @media only screen and (max-width: 767px) {
+    
+
     h1 {
-        font-size: 225%;
+        font-size: 205%;
       }
+
+      .main-nav, .sub-nav{
+        display: none;
+          /* width: 100%;
+          text-align: right; */
+      }
+
+      .main-nav__button, .sub-nav__button {
+    font-size: 110%;
+    }
+
+    
 
       .testimonials__box {
         flex-direction: column;
@@ -53,7 +84,23 @@
         margin-bottom: 50px;
       }
 
-     
+      .logo__pic{
+          display: none;
+      }
+
+      #menuToggle{
+        display: block;
+      }
+      /* .mobile-nav-icon {
+        display: inline-block;
+      }
+
+      .main-nav li{
+        display: block;
+        font-size: 100%;
+        margin-right: 25px;
+        margin-bottom: 15px;
+      } */
 
       
     
@@ -61,5 +108,11 @@
 
 /* Small Phones: from 0 to 480 px such as Iphone 5*/
 @media only screen and (max-width: 480px) {
+  h1{
+    font-size: 155%;
+  }
 
+  .button {
+    font-size: 15px;
+  }
 }

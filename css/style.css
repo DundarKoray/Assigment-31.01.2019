@@ -34,10 +34,12 @@ body {
   background-position: center;
   background-attachment: fixed;
   padding: 25px 1px 15px 1px;
+  overflow: hidden;
 }
 
 .header__sub {
   padding: 25px 1px 15px 1px;
+  overflow: hidden;
 }
 
 .logo {
@@ -71,13 +73,15 @@ body {
 }
 
 .picture__me {
-  height: 100px;
+  margin: 35px;
+  height: 90px;
   width: auto;
   border-radius: 50%;
   margin-right: 4px;
 }
 
 .hero-text-box {
+  margin: 35px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -122,8 +126,6 @@ h1 {
 .main-nav {
   font-family: "Montserrat";
   width: 70%;
-  display: flex;
-  justify-items: ;
 }
 
 ul {
@@ -154,16 +156,28 @@ li {
   font-size: 40px;
 }
 
+/*mobile nav */
+.mobile-nav-icon {
+  cursor: pointer;
+  display: none;
+  margin: 35px;
+}
+
+.mobile-nav-icon i {
+  color: white;
+}
+
 /*sub nav*/
 .sub-nav {
   font-family: "Montserrat";
+  width: 70%;
 }
 
 .sub-nav__button {
   text-decoration: none;
-  padding: 5px 15px;
+  padding: 1px 15px;
   color: #4ab19a;
-  font-size: 170%;
+  font-size: 140%;
   border-bottom: 2px solid transparent;
 }
 
@@ -191,7 +205,7 @@ li {
 }
 
 h2 {
-  font-size: 200%;
+  font-size: 180%;
   color: #4ab19a;
 }
 
@@ -315,7 +329,7 @@ cite {
 /*FORM*/
 #contact {
   padding: 80px 0;
-
+  overflow: hidden;
   font-size: 18px;
 }
 
@@ -434,11 +448,12 @@ iframe {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 1s ease;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 1.5rem 4rem;
+  box-shadow: rgba(0, 94, 62, 0.15) 0px 1.5rem 4rem;
   font-family: "Montserrat", serif;
 }
 
-.thecard:hover {
+.thecard:hover,
+.thecard:focus {
   transform: rotateY(180deg);
 }
 
@@ -480,4 +495,126 @@ iframe {
   margin-top: 40px;
   margin-bottom: 10px;
   width: 100%;
+}
+
+.green-sign {
+  color: #1e836c;
+  font-size: 120%;
+  font-style: bold;
+}
+
+#menuToggle {
+  display: none;
+  position: relative;
+  top: -12px;
+  right: 50px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #4ab19a;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #4ab19a;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -52px 0 0 -183px;
+  padding: 51px;
+  padding-top: 56px;
+
+  background: #2b272791;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(700%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
 }
